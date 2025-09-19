@@ -5,4 +5,4 @@ document.writeln(arr[i],"<br>");
 }
 
 user_name = window.prompt("Please enter your name", "Type your name here");
-document.write(user_name);
+document.getElementById("username").textContent = user_name;
