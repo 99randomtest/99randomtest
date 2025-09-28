@@ -30,18 +30,29 @@ function welcome()
   }
 document.write(welcome());
 
-function webmap_table()
-  {
-    document.write("<table width=100%>");
-    for (var row=0; row < webmaps.length; row++)
-    {
-      document.write("<tr>");
-      for (var column=0; column < webmaps[0].length; column++)
-      {
-        document.write("<td>" + webmaps[row][column] + "</td>");
-      }
+function webmap_table() {
+  document.write("<table width='100%'>");
+
+  for (var i = 0; i < webmaps.length; i++) {
+
+    if (i % 2 === 0) {
+      document.write("<tr class='even'>");
+      document.write("<td>" + webmaps[i][0] + "</td>");
+      document.write("<td>" + webmaps[i][1] + "</td>");
+      document.write("</tr>");
+      document.write("<tr class='even'>");
+      document.write("<td colspan='2'><p>" + webmaps[i][2] + "</p></td>");
+      document.write("</tr>");
+    } else {
+      document.write("<tr class='odd'>");
+      document.write("<td>" + webmaps[i][0] + "</td>");
+      document.write("<td>" + webmaps[i][1] + "</td>");
+      document.write("</tr>");
+      document.write("<tr class='odd'>");
+      document.write("<td colspan='2'><p>" + webmaps[i][2] + "</p></td>");
       document.write("</tr>");
     }
-    document.write("</table>");
-    return "";
+  }
+
+  document.write("</table>");
 }
